@@ -4,6 +4,8 @@ title: Yeoman, rock the kspa.
 
 yeoman-kspa
 ===========
+[Github project](https://github.com/WinstonFassett/yeoman-kspa)
+
 
 Samples
 -------
