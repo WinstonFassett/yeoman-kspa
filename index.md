@@ -11,4 +11,4 @@ Samples
 ### ko-webmail ###
 
 [Development](app/) 
-[Latest build](dist/)
+[Latest build](dist-latest/)
