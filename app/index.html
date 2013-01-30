@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>KO Webmail</title>
+    <link rel="stylesheet" href="scripts/ko-webmail/main.css" />
+</head>
+<body>
+
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+
+    <!-- Folders -->
+    <ul class="folders" data-bind="foreach: folders">
+        <li data-bind="text: $data, 
+                       css: { selected: $data == $root.chosenFolderId() },
+                       click: $root.goToFolder"></li>
+    </ul>
+
+    <!-- Mails grid -->
+    <table class="mails" data-bind="with: chosenFolderData">
+        <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></tr></thead>
+        <tbody data-bind="foreach: mails">
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from"></td>
+                <td data-bind="text: to"></td>
+                <td data-bind="text: subject"></td>
+                <td data-bind="text: date"></td>
+            </tr>     
+        </tbody>
+    </table>
+
+    <!-- Chosen mail -->
+    <div class="viewMail" data-bind="with: chosenMailData">
+        <div class="mailInfo">
+            <h1 data-bind="text: subject"></h1>
+            <p><label>From</label>: <span data-bind="text: from"></span></p>
+            <p><label>To</label>: <span data-bind="text: to"></span></p>
+            <p><label>Date</label>: <span data-bind="text: date"></span></p>
+        </div>
+        <p class="message" data-bind="html: messageContent" />
+    </div>
+  
+    <!-- build:js scripts/amd-app.js -->
+    <script data-main="scripts/config" src="scripts/lib/require.js"></script>
+    <!-- endbuild -->    
+    
+</body>
+</html>
