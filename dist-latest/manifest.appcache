@@ -1,10 +1,9 @@
-# configuring [object Object] [object Object] (undefined, #undefined)
 CACHE MANIFEST
 
-# Time: Wed Jan 30 2013 15:01:29 GMT-0600 (Central Standard Time)
+# Time: Thu Jan 31 2013 12:06:51 GMT-0600 (Central Standard Time)
 # This manifest was created by confess.js, http://github.com/jamesgpearce/confess
 #
-# Retrieved URL: http://localhost:3501/#/Inbox
+# Retrieved URL: http://localhost:3501/
 # User-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11
 #
 # Config:
@@ -22,8 +21,17 @@ CACHE MANIFEST
 #  configFile: C:\Users\winstonf\AppData\Roaming\npm\node_modules\yeoman\lib\support\confess.json
 
 CACHE:
-scripts/78d56a22.amd-app.js
-scripts/ko-webmail/main.css
+http://localhost:3501/scripts/lib/foundation/images/foundation/orbit/bullets.jpg
+http://localhost:3501/scripts/lib/foundation/images/foundation/orbit/left-arrow-small.png
+http://localhost:3501/scripts/lib/foundation/images/foundation/orbit/left-arrow.png
+http://localhost:3501/scripts/lib/foundation/images/foundation/orbit/pause-black.png
+http://localhost:3501/scripts/lib/foundation/images/foundation/orbit/right-arrow-small.png
+http://localhost:3501/scripts/lib/foundation/images/foundation/orbit/right-arrow.png
+http://localhost:3501/scripts/lib/foundation/images/foundation/orbit/rotator-black.png
+http://localhost:3501/scripts/lib/foundation/images/foundation/orbit/timer-black.png
+http://placehold.it/100x100
+scripts/ec3c7013.amd-app.js
+scripts/kspa-foundation/main.css
 
 NETWORK:
 *
