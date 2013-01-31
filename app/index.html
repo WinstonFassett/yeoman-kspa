@@ -1,50 +1,199 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <title>KO Webmail</title>
-    <link rel="stylesheet" href="scripts/ko-webmail/main.css" />
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- For third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicons/apple-touch-icon-144x144-precomposed.png">
+  <!-- For iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicons/apple-touch-icon-114x114-precomposed.png">
+  <!-- For first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicons/apple-touch-icon-72x72-precomposed.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="images/favicons/apple-touch-icon-precomposed.png">
+
+  <!-- <link rel="icon" href="images/favicons/favicon.ico" type="image/x-icon" /> -->
+
+  <meta name="keywords" content="foundation, design, frameworks, framework, css framework, html framework, html5, css3, SASS, SCSS, compass, responsive, design" />
+  <meta name="description" content="Foundation by ZURB is the most advanced responsive front-end framework in the world." />
+  <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com" />
+  <meta name="copyright" content="ZURB, inc. Copyright (c) 2012" />
+
+    <title>Foundation: Mobile Grid</title>
+
+  <!-- Included CSS Files -->
+  <!--link rel="stylesheet" href="http://www.zurb.com/assets/foundation.top-bar.css">
+  <link rel="stylesheet" href="http://www.zurb.com/assets/zurb.mega-drop.css">
+  <link rel="stylesheet" href="stylesheets/presentation.css"-->
+  <link rel="stylesheet" href="scripts/kspa-foundation/main.css" />
+
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
 </head>
 <body>
 
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-    <![endif]-->
+  <style>
 
+    .example .row, .example .row .column, .example .row .columns { background: #eee; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; height: 32px; text-indent: 4px; line-height: 32px; }
+    .example .row { margin-bottom: 10px; }
+    .example .row .column, .example .row .columns { background: #ccc; }
 
-    <!-- Folders -->
-    <ul class="folders" data-bind="foreach: folders">
-        <li data-bind="text: $data, 
-                       css: { selected: $data == $root.chosenFolderId() },
-                       click: $root.goToFolder"></li>
-    </ul>
+    @media handheld, only screen and (max-width: 767px) {
+        .example .row { height: auto; }
+        .example .row .column, .example .row .columns { margin-bottom: 10px; }
+        .example .row .column:last-child, .example .row .columns:last-child { margin-bottom: 0; }
+    }
 
-    <!-- Mails grid -->
-    <table class="mails" data-bind="with: chosenFolderData">
-        <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></tr></thead>
-        <tbody data-bind="foreach: mails">
-            <tr data-bind="click: $root.goToMail">
-                <td data-bind="text: from"></td>
-                <td data-bind="text: to"></td>
-                <td data-bind="text: subject"></td>
-                <td data-bind="text: date"></td>
-            </tr>     
-        </tbody>
-    </table>
+  </style>
 
-    <!-- Chosen mail -->
-    <div class="viewMail" data-bind="with: chosenMailData">
-        <div class="mailInfo">
-            <h1 data-bind="text: subject"></h1>
-            <p><label>From</label>: <span data-bind="text: from"></span></p>
-            <p><label>To</label>: <span data-bind="text: to"></span></p>
-            <p><label>Date</label>: <span data-bind="text: date"></span></p>
-        </div>
-        <p class="message" data-bind="html: messageContent" />
+  <header>
+    <div class="row">
+      <div class="twelve columns">
+        <h1 data-bind="text: title">Mobile Grid</h1>
+        <h4>On small mobile devices like iPhones or Android, the grid collapses to stack all columns on top of each other. Here's an example: try viewing this on a desktop and phone, or simply resize your browser window.</h4>
+      </div>
     </div>
-  
+  </header>
+
+  <section id="mainContent">
+
+      <div class="row">
+        <div class="two mobile-one columns">
+          <label class="right inline">App Name:</label>
+        </div>
+        <div class="ten mobile-three columns">
+          <input type="text" class="eight" placeholder="application title" data-bind="value: title, valueUpdate: 'afterkeydown'" />
+        </div>
+      </div>
+
+    <section  class="example">
+
+     <div class="row">
+        .row
+      </div>
+      <div class="row">
+        <div class="six columns">.six.columns</div>
+        <div class="six columns">.six.columns</div>
+      </div>
+      <div class="row">
+        <div class="seven columns">.seven.columns</div>
+        <div class="five columns">.five.columns</div>
+      </div>
+      <div class="row">
+        <div class="ten columns">.ten.columns</div>
+        <div class="two columns">.two</div>
+      </div>
+      </section>
+      <div class="row">
+        <div class="twelve columns">
+            <h3>Block Grid</h3>
+            <p>Foundation also includes block grids, literal two-up, three-up, four-up and five-up grids that persist on any kind of device. These are ideal for grids of images, icons, or anything that has similar sizes.</p>
+
+            <ul class="block-grid four-up">
+                <li><img src="http://placehold.it/100x100" /></li>
+                <li><img src="http://placehold.it/100x100" /></li>
+                <li><img src="http://placehold.it/100x100" /></li>
+                <li><img src="http://placehold.it/100x100" /></li>
+                <li><img src="http://placehold.it/100x100" /></li>
+                <li><img src="http://placehold.it/100x100" /></li>
+                <li><img src="http://placehold.it/100x100" /></li>
+                <li><img src="http://placehold.it/100x100" /></li>
+            </ul>
+
+        </div>
+      </div>
+  </section>
+
+
+
+
+
+  <footer class="row">
+    <section class="five columns">
+      <h6><strong>Made by ZURB</strong></h6>
+      <p>Foundation is made by <a href="http://www.zurb.com/">ZURB</a>, a product design company in Campbell, California. We've put more than 14 years of experience building web products, services and websites into this framework. <a href="../about.php">Foundation Info and Goodies &rarr;</a></p>
+    </section>
+
+    <section class="three columns">
+      <h6><strong>Using Foundation?</strong></h6>
+      <p>Let us know how you're using Foundation and we might feature you as an example!<br /><a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch &rarr;</a></p>
+    </section>
+
+    <section class="four columns">
+      <h6><strong>Need some help?</strong></h6>
+      <p class="support">For answers or help visit the <a href="docs/support.php">Support page</a>.</p>
+
+      <ul class="inline-list">
+        <li>
+            <a href="http://www.facebook.com/ZURB" target="_blank"><span class="glyph social">d</span></a>
+            </li>
+            <li>
+          <a href="https://plusone.google.com/_/+1/confirm?url=http://foundation.zurb.com&title=Foundation%20from%20ZURB" target="_blank"><span class="glyph social">l</span></a>
+            </li>
+            <li>
+                <a href="http://www.twitter.com/foundationzurb" target="_blank"><span class="glyph social">e</span></a>
+            </li>
+        </ul>
+
+    </section>
+  </footer>
+
+  <div id="newsletter">
+    <div class="row">
+
+      <div class="eight columns">
+        <h5>Stay on top of what's happening in responsive design with <a href="http://www.zurb.com/responsive">Responsive from ZURB</a></h5>.
+        <p>Sign up to receive monthly <a href="http://www.zurb.com/responsive/reading">Responsive Reading</a> highlights. <a href="http://www.zurb.com/responsive/reading/2012/10">Read Last Month's Edition &raquo;</a></p>
+      </div>
+
+      <div class="four columns">
+        <div class="row collapse">
+          <form method="post">
+            <div class="eight mobile-three columns">
+              <input type="text" name="email" placeholder="signup@example.com" />            </div>
+                        <div class="four mobile-one columns">
+              <input type="submit" href="#" class="postfix small button expand" value="Sign Up" />
+            </div>
+                      </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="copyright">
+    <div class="row">
+      <div class="four columns">
+        <p>Site content &copy; 2013 ZURB, inc.</p>
+      </div>
+      <div class="eight columns">
+        <ul class="inline-list right">
+          <li><a href="index.php">Home</a></li>
+          <li><a href="download.php">Download</a></li>
+          <li><a href="docs/index.php">Documentation</a></li>
+          <li><a href="about.php">About</a></li>
+          <li><a href="http://feeds.feedburner.com/zurb/blog">Subscribe to the ZURBlog</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!--script src="public/assets/marketing.js"></script>
+  <script src="http://www.zurb.com/assets/zurb.mega-drop.js"></script-->
+
     <!-- build:js scripts/amd-app.js -->
     <script data-main="scripts/config" src="scripts/lib/require.js"></script>
-    <!-- endbuild -->    
-    
+    <!-- endbuild -->  
+
+
 </body>
 </html>

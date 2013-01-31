@@ -1,6 +1,6 @@
 require.config({
     // main entry point
-    deps: ["ko-webmail/main"],
+    deps: ["kspa-foundation/main"],
 
     paths: {
       // requireJS plugins
@@ -14,11 +14,17 @@ require.config({
       signals: 'lib/signals',
       bootstrap: 'lib/bootstrap/js/bootstrap',
       // sammy is an alternative to crossroads+hasher, but requires jQuery (see shim)
-      sammy: 'lib/sammy'
+      sammy: 'lib/sammy',
+
+      'foundation.topbar': 'lib/foundation/javascripts/jquery.foundation.topbar'
+
   },
   shim: {
       jquery: '$',
       bootstrap: { deps: ['jquery'] },
-      sammy: { deps: ['jquery'] }
+      sammy: { deps: ['jquery'] },
+
+      'foundation.topbar' : { deps: ['jquery'] },
+      'lib/foundation/jquery.foundation.accordion': { deps: ['jquery'] }
   }
 });

@@ -66,7 +66,7 @@ module.exports = function( grunt ) {
       reload: {
         files: [
           'app/*.html',
-          'app/styles/**/*.css',
+          'app/**/*.css',
           'app/scripts/**/*.js',
           'app/images/**/*'
         ],
@@ -124,7 +124,8 @@ module.exports = function( grunt ) {
 
     // concat css/**/*.css files, inline @import, output a single minified css
     css: {
-      'scripts/ko-webmail/main.css': ['scripts/ko-webmail/main.css']
+      // 'scripts/ko-webmail/main.css': ['scripts/ko-webmail/main.css']
+      'scripts/kspa-foundation/main.css': ['scripts/kspa-foundation/main.css']
       // 'styles/index.css': ['styles/**/*.css']
     },
 

@@ -1,0 +1,21 @@
+﻿@import url('../lib/foundation/stylesheets/foundation.css');
+/*@import url('../lib/zurb/foundation.top-bar.css');*/
+/*@import url('../lib/zurb/presentation.css');*/
+
+/*@import url('../lib/zurb/zurb.mega-drop.css');*/
+
+
+
+header { background-color: #2ba6cb; padding: 22px 0; }
+
+header h1 { color: #fff; font-weight: 500; }
+
+header h4 { color: #fff; font-weight: 300; }
+
+#mainContent {
+	margin-top: 44px;
+	margin-bottom: 22px;
+	padding-bottom: 22px;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+}
